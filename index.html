@@ -1,59 +1,39 @@
 <html ng-app="virtualsupport">
     <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-        <script src="angular.min.js"></script>
-        <script src="app.js"></script>
-        <style>
-        .jumbotron
-        {
-            background-color: #1ec2f4;
-            color: #fff;;
-        }
-        .bg-img
-        {
-            background-repeat: no-repeat;
-            background-blend-mode:unset;
-        }
-        .jumbo
-        {
-            
-            color: #fffffffd;
-            font-size:x-large;
-            font-display:unset;
-
-        }
-        </style>
-        <title>lecture 2</title>
-        <body class="bg-img" ng-controller="firstcontroller">
-            <div class="jumbotron text-center">
-                <h1>Virtual Support Group</h1>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-4">
-                       
-                    </div>
-                    <div class="col-sm-4">
-                        
-                        <input type="text" ng-model="username" class="form-control" id="focusedInput" placeholder="User Name">
-                        <br>
-                        <input type="text" ng-model="password" class="form-control" id="focusedInput" placeholder="password"> 
-                    </div>
-                    <div class="col-sm-4"></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-4">
-                    </div>
-                    <div class="col-sm-4 jumbo text-center">
-                        <br><button type="submit">Login</button>
-                    </div>
-                    <div class="col-sm-4s">
-                    </div>
-                </div>
-                <center><br><button type="button">Register</button></center>
-            </div>
-        </body>
+        <title>Registration Page</title>
+            <link rel="stylesheet" href="style.css">
     </head>
-</html>
+    <body>
+        <h1 style="color:whitesmoke; text-align: center; background-color: cornflowerblue; height: 50px; font-family: Georgia, 'Times New Roman', Times, serif; outline: whitesmoke;;">VIRTUAL SUPPORT GROUP</h1>
+        <div class="Registration-Page">
+            <div class="form">
+                <form class="register-form">
+                    <h2 style="color: whitesmoke;text-align: center; background-color: cornflowerblue; height: 50px; font-family: Georgia, 'Times New Roman', Times, serif; outline: whitesmoke;;">REGISTRATION</h1>
+                    <input type="text"     placeholder="Username"/> 
+                    <input type="text"     placeholder="Gender"/>
+                    <input type="text"     placeholder="Age"/>  
+                    <input type="password" placeholder="Password"/> 
+                    <input type="text"     placeholder="Email id"/> <br>
+                    <button type="submit">Create</button>
+                    <p class="message" style="color: whitesmoke">Aready Registered? <a href="#">Login</a>
+                    </p>
+                </form>
+        
+                <form class="login-form">
+                    <h2 style="color: whitesmoke;text-align: center; background-color: cornflowerblue; height: 50px; font-family: Georgia, 'Times New Roman', Times, serif; outline: whitesmoke;;">LOGIN</h1>
+                    <input type="text" placeholder="Username" name="username"/>
+                    <input type="password" placeholder="Password" name="password"/>
+                    <button type="submit">LOGIN</button>
+                    <p class="message" style="color: whitesmoke ;">Not Registered? <a href="#">Register</a></p>
+                </form>
+            </div>
+        </div>
+        <script src='https://code.jquery.com/jquery-3.5.1.min.js'>
+        </script>
+        <script>
+            $('.message a').click(function(){
+                $('form').animate({height: "toggle",opacity: "toggle"},"slow");
+            });
+        </script>
+    </body>
+</html> 
