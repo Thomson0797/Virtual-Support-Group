@@ -24,6 +24,20 @@
                 controller: 'Account.IndexController',
                 controllerAs: 'vm',
                 data: { activeTab: 'account' }
+            })
+            .state('create', {
+                url: '/',
+                templateUrl: 'create/index.html',
+                controller: 'create.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'create' }
+            })
+            .state('about', {
+                url: '/',
+                templateUrl: 'about/index.html',
+                controller: 'about.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'about' }
             });
     }
 
