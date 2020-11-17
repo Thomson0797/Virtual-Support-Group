@@ -1,23 +1,36 @@
-(function () {
-    'use strict';
+var express = require('express');
+var router = express.Router();
+var request = require('request');
+var config = require('config.json');
 
-    angular
-        .module('app')
-        .controller('Create.IndexController', Controller);
+router.get('/', function (req, res) {
+    res.render('register');
+});
 
-    function Controller(UserService) {
-        var vm = this;
+router.post('/', function (req, res) {
+    // register using api to maintain clean separation between layers
+    request.post({
+        url: config.apiUrl + '/users/register',
+        form: req.body,
+        json: true
+    }, function (error, response, body) {
+        if (error) {
+            return res.render('register', { error: 'An error occurred' });
+        }
 
-        vm.user = null;
-
-        initController();
-
-        function initController() {
-            // get current user
-            UserService.GetCurrent().then(function (user) {
-                vm.user = user;
+        if (response.statusCode !== 200) {
+            return res.render('register', {
+                error: response.body,
+                username: req.body.username,
+                age: req.body.age,
+                emailid: req.body.emailid
             });
         }
-    }
 
-})();
+        // return to login page with success message
+        req.session.success = 'Registration successful';
+        return res.redirect('/login');
+    });
+});
+
+module.exports = router;

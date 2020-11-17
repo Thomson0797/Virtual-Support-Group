@@ -8,7 +8,7 @@
     <link href="app-content/app.css" rel="stylesheet" />
 
 </head>
-<body class="container">
+<body class="container-fluid">
     <!-- header -->
     <header>
         <ul class="nav nav-tabs">
@@ -16,8 +16,10 @@
             <li ng-class="{active: activeTab === 'account'}"><a ui-sref="account">Account</a></li>
             <li ng-class="{active: activeTab === 'create'}"><a ui-sref="create">Create</a></li>
             <li ng-class="{active: activeTab === 'about'}"><a ui-sref="about">About</a></li>
-            <li><a href="/login" target="_self">Logout</a></li>
+            <li class="nav navbar-nav navbar-right"><a href="/login" target="_self">Logout</a></li>
         </ul>
+            
+       
         <div class="flash-message" ng-if="flash">
             <div class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
         </div>
@@ -40,5 +42,7 @@
     <script src="app-services/flash.service.js"></script>
     <script src="home/index.controller.js"></script>
     <script src="account/index.controller.js"></script>
+    <script src="about/index.controller.js"></script>
+    
 </body>
 </html>

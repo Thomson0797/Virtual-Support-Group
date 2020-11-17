@@ -10,6 +10,15 @@ router.use('/', function (req, res, next) {
     next();
 });
 
+router.use('/', function (req, res, next) {
+    if (req.path !== '/loginmem' && !req.session.token) {
+        return res.redirect('/loginmem?returnUrl=' + encodeURIComponent('/app' + req.path));
+    }
+
+    next();
+});
+
+
 // make JWT token available to angular app
 router.get('/token', function (req, res) {
     res.send(req.session.token);
@@ -17,5 +26,7 @@ router.get('/token', function (req, res) {
 
 // serve angular app files from the '/app' route
 router.use('/', express.static('app'));
+
+
 
 module.exports = router;

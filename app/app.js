@@ -12,7 +12,7 @@
 
         $stateProvider
             .state('home', {
-                url: '/',
+                url: '/home',
                 templateUrl: 'home/index.html',
                 controller: 'Home.IndexController',
                 controllerAs: 'vm',
@@ -26,14 +26,14 @@
                 data: { activeTab: 'account' }
             })
             .state('create', {
-                url: '/',
+                url: '/create',
                 templateUrl: 'create/index.html',
                 controller: 'create.IndexController',
                 controllerAs: 'vm',
                 data: { activeTab: 'create' }
             })
             .state('about', {
-                url: '/',
+                url: '/about',
                 templateUrl: 'about/index.html',
                 controller: 'about.IndexController',
                 controllerAs: 'vm',

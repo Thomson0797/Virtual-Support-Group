@@ -1,6 +1,6 @@
-﻿<%- include('partials/header') %>
+<%- include('partials/header') %>
 <div class="form-container">
-    <h2>Register</h2>
+    <h2>Member Register</h2>
     <% if(locals.error) { %>
         <div class="alert alert-danger"><%= error %></div>
     <% } %>
@@ -14,6 +14,14 @@
             <input type="text" name="age" id="age" class="form-control" value="<%= locals.age || '' %>" required />
         </div>
         <div class="form-group">
+            <label for="thelicense">Doctoral Degree Certificate in Psychology</label>
+            <input type="file" name="thelicense" id="thelicense" class="form-control" value="<%= locals.thelicense || '' %>" required />
+        </div>
+        <div class="form-group">
+            <label for="thexp">Experience as Therapist</label>
+            <input type="text" name="thexp" id="thexp" class="form-control" value="<%= locals.thexp || '' %>" required />
+        </div>
+        <div class="form-group">
             <label for="emailid">Email ID</label>
             <input type="text" name="emailid" id="emailid" class="form-control" value="<%= locals.emailid || '' %>" required />
         </div>
@@ -24,9 +32,9 @@
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Register</button>
             <br>
-            Already Registered? <a href="/login" class="btn btn-link">Login</a>
+            Already Registered? <a href="/loginmem" class="btn btn-link">Login</a>
             <br>
-            Want to be a member? <a href="/registermem" class="btn btn-link">Register as member</a>
+            NOT a member? <a href="/register" class="btn btn-link">Register as member</a>
         </div>
 
     </form>

@@ -1,6 +1,13 @@
 ﻿body {
     padding: 20px 0;
-    background-color: rgb(191, 208, 240);
+    background-image: url(support2.jpg);
+    height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+
 }
 
 .flash-message {

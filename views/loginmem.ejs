@@ -1,6 +1,6 @@
-﻿<%- include('partials/header') %>
+<%- include('partials/header') %>
 <div class="form-container">
-    <h2>Login</h2>
+    <h2>Members Login</h2>
     <% if(locals.error) { %>
         <div class="alert alert-danger"><%= error %></div>
     <% } %>
@@ -17,9 +17,9 @@
         <div class="form-group">
             <button type="submit" class="btn btn-primary">Login</button>
             <br>
-            Not Registered? <a href="/register" class="btn btn-link">Register</a>
+            Not Registered? <a href="/registermem" class="btn btn-link">Register</a>
             <br>
-            If you are a member <a href="/loginmem" class="btn btn-link">Login here</a>
+            If you are NOT a member <a href="/login" class="btn btn-link">Login here</a>
         </div>
     </form>
 </div>

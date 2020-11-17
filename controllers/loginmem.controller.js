@@ -1,4 +1,4 @@
-﻿var express = require('express');
+var express = require('express');
 var router = express.Router();
 var request = require('request');
 var config = require('config.json');
@@ -11,22 +11,22 @@ router.get('/', function (req, res) {
     var viewData = { success: req.session.success };
     delete req.session.success;
 
-    res.render('login', viewData);
+    res.render('loginmem', viewData);
 });
 
 router.post('/', function (req, res) {
     // authenticate using api to maintain clean separation between layers
     request.post({
-        url: config.apiUrl + '/users/authenticate',
+        url: config.apiUrl + '/members/authenticate',
         form: req.body,
         json: true
     }, function (error, response, body) {
         if (error) {
-            return res.render('login', { error: 'An error occurred' });
+            return res.render('loginmem', { error: 'An error occurred' });
         }
 
         if (!body.token) {
-            return res.render('login', { error: body, emailid: req.body.emailid });
+            return res.render('loginmem', { error: body, emailid: req.body.emailid });
         }
 
         // save JWT token in the session to make it available to the angular app
